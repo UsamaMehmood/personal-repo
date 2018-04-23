@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" name="name">
+            <div class="input-group-append">
+                <input type="submit" class="input-group-btn btn btn-primary" value="Search">
+            </div>
+        </div>
+    </form>
+    {% if not items %}
+
+        <h3>No Fans in database!</h3>
+    {% else %}
+        <table class="table">
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Date Purchase on</th>
+                <th>Total Amount</th>
+                <th>Amount Paid</th>
+                <th>Amount Payable</th>
+                <th>Actions</th>
+
+            </tr>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.date_purchased }}</td>
+                    <td>{{ item.total_amount }}</td>
+                    <td>{{ item.amount_paid }}</td>
+                    <td>{{ item.balance }}</td>
+                    <td><a class="btn-sm btn-warning" href="{% url 'store:update_fan' item.id %}">Edit</a> | <a
+                            class="btn-sm btn-danger" href="{% url 'store:delete_fan' item.id %}">Delete</a></td>
+
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% endif %}
+    <a href="{% url 'store:add_fan' %}" class="btn btn-success">Add Fan</a>
+{% endblock %}

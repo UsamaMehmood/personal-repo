@@ -1,0 +1,13 @@
+.jumbotron h1 {
+    text-align: center;
+}
+
+table {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
