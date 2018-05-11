@@ -1,8 +1,4 @@
-certifi==2018.4.16
 Django==1.10.5
-django-cors-headers==2.2.0
-djangorestframework==3.7.7
-drfdocs==0.0.11
 pipenv==11.10.0
 virtualenv==15.2.0
 virtualenv-clone==0.3.0
